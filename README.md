@@ -57,8 +57,10 @@ The hardware used for the demo was: Raspberry Pi 3B, Arduino UNO, HC-06 Bluetoot
 The HC-SR04 requires 5V for operation and outputs 5V.  This causes a bit of an issue because the digital GPIO pins of the Raspberry Pi are not rated for 5V input and this could possibly damage the unit.  Because of this I created a simple voltage divider circuit to make sure that the voltage going into the Raspberry Pi was around 3.3V.  Below is a schematic of the circuit used:
 ![voltage divider schematic](https://user-images.githubusercontent.com/46805337/128112127-88e3d51f-6335-4e0f-b99b-d988575477c6.png)
 
-* **Running The System** - Once the hardware is in the correct configuration as stated above, simply run the ArduinoGarageDoor.ino program from the Arduino and the PiGarageDoor.py on the Raspberry Pi.  You may have to look into the setup code for the ThingSpeak in PiGarageDoor.py to make sure that you make the correct connection to your personal ThingSpeak server.  
-* **Bugs** - The code as it is now has issues sending the password from the Arduino to the Pi.  The results from experimentation showed that the password would be sent out of order. (e.g. the password "12345" would be recieved as "34512").  This seems to be a timing issue as well as an algorithm issue pertaining to the retrieval of the characters of the password.  
+## Running The System 
+Once the hardware is in the correct configuration as stated above, simply run the ArduinoGarageDoor.ino program from the Arduino and the PiGarageDoor.py on the Raspberry Pi.  You may have to look into the setup code for the ThingSpeak in PiGarageDoor.py to make sure that you make the correct connection to your personal ThingSpeak server.  
+## Bugs 
+The code as it is now has issues sending the password from the Arduino to the Pi.  The results from experimentation showed that the password would be sent out of order. (e.g. the password "12345" would be recieved as "34512").  This seems to be a timing issue as well as an algorithm issue pertaining to the retrieval of the characters of the password.  
 
 
     
